@@ -1,0 +1,589 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+  }
+  
+/* Header */
+#header {
+    background-color: #1c1c1c; /* Màu nền của toàn bộ header */
+    color: #fff;
+    padding: 10px 0; /* khoảng cách giữa header và các phần tử khác */
+}
+
+/* Header Bar */
+.Header_Bar {
+    display: flex; /*hỗ trợ layout flexbox*/
+    justify-content: space-between; /*phân bố các phần tử trong header*/
+    align-items: center; /*phân bố các phần tử theo chiều dọc*/
+    padding: 0 20px; /*khoảng cách giữa header và các phần tử khác */
+    font-size: 14px; /*kích thước chữ*/
+}
+
+.Header_Bar a {
+    color: #fff; 
+    text-decoration: none; /*không có đường gạch dưới */
+}
+
+.Name_Shop a {
+    font-weight: bold; /*in đậm */
+}
+
+.Address_Shop a,
+.Contact_Shop a {
+    font-size: 13px; /*kích thước chữ */
+}
+
+/* Navigation Bar */
+.Navigation_Bar {
+    display: flex; /*hỗ trợ layout flexbox*/
+    align-items: center; /*phân bố các phần tử theo chiều dọc*/
+    background-color: #2a2a2a; /* Màu nền cho thanh navigation */
+    padding: 10px 20px; /*khoảng cách giữa navigation và các phần tử khác */
+}
+
+.Logo_image img {
+    height: 80px; /*kích thước ảnh */
+    margin-right: 20px; /*khoảng cách giữa ảnh và các phần tử khác */
+}
+
+.Navigation_menu ul {
+    display: flex;
+    list-style: none; /*không có dấu chấm trước mỗi phần tử */
+    margin: 0;
+    padding: 0; /*không có khoảng cách giữa các phần tử */
+}
+
+.Navigation_menu ul > li {
+    position: relative; /*tạo vị trí cho các phần tử */
+    margin-right: 20px; /*khoảng cách giữa các phần tử */
+}
+
+.Navigation_menu ul > li > a {
+    color: #fff;
+    text-decoration: none; 
+    font-weight: bold; 
+    font-size: 14px; 
+    padding: 5px 0; /*khoảng cách giữa chữ và đường viền */
+}
+
+.Navigation_menu ul > li:hover > ul {
+    display: block; /* Hiển thị menu con khi hover */
+}
+
+.Navigation_menu ul > li > ul {
+    display: none; /* Ẩn menu con ban đầu */
+    position: absolute; /*tạo vị trí cho menu con */
+    top: 30px; /*khoảng cách giữa menu con và menu cha */
+    left: 0; /*khoảng cách giữa menu con và menu cha */
+    background-color: #333;
+    padding: 10px;
+    list-style: none; /*không có dấu chấm trước mỗi phần tử */
+    border-radius: 4px; /*khoảng cách giữa menu con và đường viền */
+}
+
+.Navigation_menu ul > li > ul > li {
+    margin-bottom: 5px; /*khoảng cách giữa các phần tử */
+}
+
+.Navigation_menu ul > li > ul > li:last-child {
+    margin-bottom: 0;
+}
+
+.Navigation_menu ul > li > ul > li a {
+    color: #fff;
+    font-size: 13px;
+    text-decoration: none; /* không có đường viền */
+}
+
+.Navigation_menu ul > li > ul > li a:hover {
+    color: #ffd700; /* Màu vàng khi hover */
+}
+
+/* Hamburger icon */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  margin-left: auto;
+  padding: 0 10px;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .Navigation_Bar {
+    flex-wrap: wrap;
+  }
+
+  .Navigation_menu {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .Navigation_menu ul {
+    flex-direction: column;
+  }
+
+  .Navigation_menu ul li {
+    margin: 10px 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-right {
+    margin-left: 0;
+    margin-top: 10px;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .Navigation_menu.show {
+    display: flex;
+  }
+}
+/* Login */
+.Login_Button {
+  margin-left: auto; /* căn giữa menu */
+}
+
+.Login_Button .login_button {
+  color: #fff;
+  text-decoration: none;
+  background-color: #444;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.Login_Button .login_button:hover {
+  background-color: #fff;
+  color: #000;
+}
+/* END HEADER */
+
+.Navigation_menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.Navigation_menu > ul > li {
+    display: inline-block;
+    position: relative;
+}
+
+.Navigation_menu > ul > li > a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+}
+
+.Navigation_menu ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #1c1c1c;
+    padding: 15px 0;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    z-index: 999;
+}
+
+.Navigation_menu ul li:hover > ul {
+    display: block;
+}
+
+.Navigation_menu ul li ul li {
+    display: block;
+    padding: 10px 20px;
+    border-bottom: 1px solid #3c3c3c;
+}
+
+.Navigation_menu ul li ul li:last-child {
+    border-bottom: none;
+}
+
+.Navigation_menu ul li ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: normal;
+    display: block;
+}
+
+.Navigation_menu ul li ul li a:hover {
+    color: #d5b75b;
+}
+
+/* footer */
+#main_footer {
+    background-color: #262626; /* màu xám đậm gần đen */
+    color: #d9d9d9; /* chữ màu xám nhạt */
+    padding: 60px 20px 30px;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  ul.menu-footer {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.menu-footer > li {
+    margin-bottom: 10px; /* khoảng cách giữa các dòng */
+}
+
+ul.menu-footer > li > a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 5px 0;
+    display: inline-block; /* giúp padding hoạt động đúng */
+}
+
+  
+  #main_footer .footer-logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+  }
+  
+  #main_footer address {
+    font-style: normal;
+    margin-bottom: 20px;
+  }
+  
+  #main_footer .widget h3,
+  #main_footer .text-uppercase {
+    color: #f5c100; /* màu vàng */
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  
+  #main_footer .menu li,
+  #main_footer p {
+    margin-bottom: 8px;
+  }
+  
+  #main_footer a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  #main_footer a:hover {
+    color: #fff;
+  }
+  
+  #main_footer .social_icon {
+    font-size: 18px;
+    color: #fff;
+    margin-right: 12px;
+    transition: transform 0.3s;
+  }
+  
+  #main_footer .social_icon:hover {
+    transform: scale(1.2);
+    color: #f5c100;
+  }
+  
+  .magnetis_logo {
+    font-size: 12px;
+    color: #666;
+    text-align: right;
+  }
+  
+  .magnetis_logo img {
+    max-height: 100px;
+    margin-left: 5px;
+    background-color: whitesmoke;
+    vertical-align: middle;
+    filter: brightness(0.8);
+  }
+  #main_footer .row {
+      display: flex;
+      flex-wrap: wrap; /* Đảm bảo xuống dòng khi màn hình nhỏ */
+      justify-content: space-between; /* Giãn đều khoảng cách giữa các cột */
+    }
+    
+    #main_footer .row > .widget,
+    #main_footer .row > .about {
+      flex: 1 1 200px; /* Cho phép mỗi cột chiếm đều không gian và thu nhỏ nếu cần */
+      margin: 10px;
+    }
+/* end footer */
+
+
+    .bottom_bar {
+      background-color: #1c1c1c; 
+      color: #fff;            
+      padding: 20px 0;
+      font-size: 14px;
+      display: flex;
+    }
+    
+    .bottom_bar a {
+      color: #ccc; /* Màu chữ link */
+      text-decoration: none;
+      margin-right: 15px;
+      transition: color 0.3s ease;
+    }
+    
+    .bottom_bar a:hover {
+      color: #fff;
+    }
+    
+    .bottom_bar .copyright {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    
+    .bottom_bar .terms {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    
+    .bottom_bar .magnetis_logo {
+      text-align: center;
+      font-size: 12px;
+      opacity: 0.8;
+    }
+  
+    /* Phong cách cho phần chính */
+  .inventaire {
+      background-color: #000;
+      color: #fff;
+      padding: 40px 0;
+  }
+  
+  .image-texte {
+      background-color: #fff;
+      color: #000;
+      padding: 30px 0;
+  }
+  
+  .polygon-image svg {
+      width: 100%;
+      height: auto;
+  }
+  
+  .texte h2 {
+      font-size: 36px;
+      font-weight: bold;
+      text-transform: uppercase;
+  }
+  
+  .texte-inventaire {
+      margin-top: 20px;
+      font-size: 16px;
+      line-height: 1.6;
+  }
+  
+  .cta-link {
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #000;
+      border-bottom: 2px solid #000;
+  }
+  
+  /* Formulaires */
+  .formulaire-vehicules {
+      background-color: #111;
+      padding: 30px 20px;
+      text-align: center;
+  }
+  
+  .formulaire-vehicules h2 {
+      color: #fff;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+  }
+  
+  .formulaire-vehicules form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+  }
+  
+  .formulaire-vehicules select,
+  .formulaire-vehicules .button {
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      min-width: 180px;
+      max-width: 100%;
+  }
+  
+  .formulaire-vehicules .button {
+      background-color: #f7c600;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  }
+  
+  .formulaire-vehicules .button:hover {
+      background-color: #d4a800;
+  }
+  
+  /* Responsive: Chuyển hàng dọc khi nhỏ hơn 500px */
+  @media (max-width: 500px) {
+      .formulaire-vehicules form {
+          flex-direction: column;
+          align-items: stretch;
+      }
+  
+      .formulaire-vehicules select,
+      .formulaire-vehicules .button {
+          width: 100%;
+      }
+  }
+/* end footer and header */
+
+  .inventory-page {
+    display: flex;
+    padding: 20px;
+  }
+  
+  .filter-sidebar {
+    width: 280px;
+    padding: 20px;
+    background: #fff;
+    margin-right: 20px;
+    border: 1px solid #ddd;
+  }
+  
+  .filter-sidebar h3 {
+    font-style: italic;
+    color: #888;
+  }
+  
+  .filter-sidebar h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .filter-sidebar input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .filter-sidebar button {
+    background: #f7c600;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .filter-group details {
+    margin: 10px 0;
+  }
+  
+  .price-range {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  
+  .inventory-content {
+    flex: 1;
+  }
+  
+  .inventory-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .car-card {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+  }
+  
+  .car-card h3 {
+    margin: 0;
+    font-size: 18px;
+  }
+  
+  .car-card .year {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .car-card p {
+    margin: 5px 0 10px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .car-card img {
+    width: 100%;
+    height: 200px; /* hoặc bạn chọn chiều cao phù hợp */
+    object-fit: cover;
+    display: block;
+  }
+  
+  .car-card .info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .car-card .price {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #f7c600;
+  }
+  .inventory-banner {
+    width: 100%;
+    background-color: #f5f5f5; /* hoặc màu xám nhạt tùy hình gốc */
+    padding: 60px 20px 40px 20px;
+    text-align: center;
+  }
+  
+  .banner-content {
+    text-align: left;
+  }
+  .banner-content .subtitle {
+    font-style: italic;
+    font-size: 22px;
+    color: #999;
+    margin-bottom: 10px;
+  }
+  
+  .banner-content .main-title {
+    font-size: 46px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.3;
+    margin: 0;
+    color: #111;
+  }
+  
+  
