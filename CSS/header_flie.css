@@ -104,26 +104,6 @@ body {
     color: #ffd700; /* Màu vàng khi hover */
 }
 
-/* Login */
-.Login_Button {
-  margin-left: auto; /* căn giữa menu */
-}
-
-.Login_Button .login_button {
-  color: #fff;
-  text-decoration: none;
-  background-color: #444;
-  padding: 5px 10px;
-  border-radius: 3px;
-  font-size: 12px;
-}
-
-.Login_Button .login_button:hover {
-  background-color: #fff;
-  color: #000;
-}
-
-
 /* Modal style */
 .modal {
   display: none;
@@ -223,7 +203,24 @@ body {
     display: flex;
   }
 }
+/* Login */
+.Login_Button {
+  margin-left: auto; /* căn giữa menu */
+}
 
+.Login_Button .login_button {
+  color: #fff;
+  text-decoration: none;
+  background-color: #444;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.Login_Button .login_button:hover {
+  background-color: #fff;
+  color: #000;
+}
 /* END HEADER */
 
 /* Video Section */
@@ -668,3 +665,54 @@ body {
         width: 100%;
     }
 }
+/* Modal styles */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #030303;
+  padding: 30px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  background-color: #fff;       /* ✅ Nền trắng */
+  color: #000;                  /* ✅ Chữ đen */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-content button {
+  padding: 10px 20px;
+  background: rgb(56, 55, 55);
+  color: white;                 /* ✅ Chữ trắng */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
